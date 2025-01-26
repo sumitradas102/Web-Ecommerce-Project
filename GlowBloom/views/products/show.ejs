@@ -1,0 +1,102 @@
+<% layout('boilerplate') %>
+<link rel="stylesheet" href="/css/staribility.css">
+<style>
+    body {
+        background: linear-gradient(135deg, #ffe6f7, #ffb3d9);
+        font-family: 'Poppins', sans-serif;
+        color: #ff69b4;
+        padding: 20px;
+    }
+
+    .card-container {
+        max-width: 40rem;
+        margin: 40px auto;
+        border-radius: 25px;
+        background: linear-gradient(135deg, #ffc1e3, #ffccf9);
+        box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+        overflow: hidden;
+    }
+
+    .card-img-top {
+        width: 100%;
+        border-radius: 0 0 50% 50%;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    }
+
+    .card-body {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff1493;
+    }
+
+    .card-subtitle {
+        font-size: 1.4rem;
+        color: #ff69b4;
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+        color: #ff6eb4;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        border-radius: 30px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .form-control {
+        border: 2px solid #ff69b4;
+        border-right: none;
+        border-radius: 0;
+    }
+
+    .input-group-text {
+        background-color: #ff69b4;
+        color: #fff;
+        border: none;
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        background-color: #ff69b4;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 25px;
+        font-size: 1.2rem;
+        color: #fff;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+        background-color: #ff1493;
+        transform: scale(1.1);
+    }
+
+    .col-6 {
+        margin-top: 50px;
+    }
+</style>
+
+<div class="card-container">
+    <img src="<%= product.image %>" class="card-img-top" alt="Product Image">
+    <div class="card-body">
+        <h5 class="card-title"><%= product.name %></h5>
+        <h6 class="card-subtitle mb-2"><%= product.price %>৳/Quantity</h6>
+        <p class="card-text"><%= product.description %></p>
+        <form class="needs-validation" action="/order/<%= product._id %>" method="post" novalidate>
+            <div class="input-group">
+                <input type="number" class="form-control" name="quantity" required placeholder="Enter quantity">
+                <span class="input-group-text">Quantity</span>
+            </div>
+            <button class="btn btn-primary">Add to Cart</button>
+        </form>
+    </div>
+</div>

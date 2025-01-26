@@ -1,0 +1,125 @@
+<% layout('boilerplate') %>
+
+<div class="card mx-auto" style="width: 25rem">
+  <img src="https://alyaskin.com.au/cdn/shop/files/AS_DEC_WEB-22-supercharged.jpg?v=1709853298&width=1946" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <form
+      class="needs-validation"
+      method="post"
+      action="/user/register"
+      novalidate
+    >
+      <div class="mb-3"></div>
+      <label for="cashifyUsername" class="form-label"
+        ><a href="localhost:3001">CashIt</a> Username</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="cashifyUsername"
+        aria-describedby="cashifyUsername"
+        name="cashifyUsername"
+        required
+      />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="mb-3"></div>
+      <label for="id" class="form-label"
+        ><a href="localhost:3001">CashIt</a> ID</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="id"
+        aria-describedby="id"
+        name="id"
+        required
+      />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="mb-3"></div>
+      <div class="mb-3"></div>
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        aria-describedby="username"
+        name="username"
+        required
+      />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+        />
+      </div>
+      <div class="valid-feedback">Looks good!</div>
+      <div style="display: flex; justify-content: center">
+        <button type="submit" class="btn btn-secondary">Sign Up</button>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <p style="color: azure">
+          Don't have a  account?
+          <a href="localhost:3001/register">SignUp</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  body {
+    height: 100vh;
+    background-image: linear-gradient(rgba(206, 187, 200, 0.9), rgba(0, 0, 0, 0.5)),
+      url("https://hellobubble.com/cdn/shop/products/fullline_bundle_1200x1200_crop_center.jpg?v=1607433085");
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+
+  .card {
+    background: linear-gradient(rgb(255, 6, 151), rgb(236, 157, 213));
+    color: beige;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.521);
+    border-radius: 4px;
+  }
+
+  .card {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 10px rgba(255, 43, 142, 0.5);
+  }
+
+  .btn-secondary {
+    color: #ffffff;
+    text-shadow: none;
+    background-color: rgb(129, 5, 102);
+  }
+
+  .btn-secondary:hover {
+    background-color: white;
+    color: rgb(153, 2, 108);
+    box-shadow: rgba(255, 0, 128, 0.534);
+  }
+  
+</style>

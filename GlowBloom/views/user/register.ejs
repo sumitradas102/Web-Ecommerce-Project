@@ -1,0 +1,50 @@
+<% layout('boilerplate') %>
+<style>body {
+    position: relative;
+    background-image: url('https://media.self.com/photos/63503faecbcc10f798a3cc8e/1:1/w_3748,h_3748,c_limit/Dermatologist-skincare-tips.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: 8px;  /* Apply blur directly here */
+    color: #fff;
+    min-height: 100vh;  /* Ensure body content takes full height */
+    overflow: auto;  /* Allow scrolling */
+}</style>
+    <div class="card mx-auto" style="width: 25rem;">
+        <img src="https://s3-prod.adage.com/s3fs-public/20230817_Bubble_3x2.jpg"
+            class="card-img-top" alt="...">
+        <div class="card-body">
+            <form class="needs-validation" method="post" action="/user/register" novalidate>
+                <div class="mb-3"></div>
+                <label for="cashifyUsername" class="form-label"><a href="localhost:3001">CashIt</a> Username</label>
+                <input type="text" class="form-control" id="cashifyUsername" aria-describedby="cashifyUsername"
+                    name="cashifyUsername" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="mb-3"></div>
+                <label for="id" class="form-label"><a href="localhost:3001">CashIt</a> ID</label>
+                <input type="text" class="form-control" id="id" aria-describedby="id" name="id" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="mb-3"></div>
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" aria-describedby="username" name="username"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p class="text-muted mt-2 mb-0">Don't have a cashit account? <a
+                        href="localhost:3001/register">register</a></p>
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-pink border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#" style="font-family: 'Lobster', cursive; font-size: 2rem; color: #ff69b4;">GlowBloom</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a class="nav-link text-white" href="/product" style="font-weight: bold; color: #ff69b4;">Products</a>
+                <a class="nav-link text-white" href="/order/new" style="font-weight: bold; color: #ff69b4;">Cart</a>
+                <a class="nav-link text-white" href="/order" style="font-weight: bold; color: #ff69b4;">Orders</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <% if(!currentUser){ %>
+                    <a class="nav-link text-white" href="/user/register" style="font-weight: bold; color: #ff69b4;">Register</a>
+                    <a class="nav-link text-white" href="/user/login" style="font-weight: bold; color: #ff69b4;">Login</a>
+                    <% } else { %>
+                        <a class="nav-link text-white" href="/user/logout" style="font-weight: bold; color: #ff69b4;">Logout</a>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .bg-pink {
+        background-color: #ff69b4;
+    }
+
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ff85c2 !important;
+        text-decoration: underline;
+    }
+
+    .navbar-toggler-icon {
+        background-color: #ff69b4;
+    }
+</style>

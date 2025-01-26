@@ -1,0 +1,146 @@
+<% layout('boilerplate') %>
+
+<div class="order-title">
+    <h3>Pending Orders</h3>
+</div>
+
+<% for(r of orders) {%>
+    <% if(r.status !== "Delivered" ){ %>
+        <div class="card mx-auto <%= r.status === 'Delivered' ? 'border-success' : 'border-primary' %> mb-3"
+             style="max-width: 35rem;">
+            <div class="card-header">
+                <%= "To Be Sold" %>
+                <span class="badge rounded-pill text-bg-success">Payment Verified</span>
+            </div>
+            <div class="card-body">
+                <p style="text-align: center; font-size: larger; color: white;">Total Price: <%= r.price %> TK</p>
+                <hr>
+                <p>
+                    <h6 style="text-align: center; color: white;">Ordered Products:</h6>
+                    <ul style="color: white;">
+                        <% for(product of r.product) { %>
+                            <li>
+                                <%= product %>
+                            </li>
+                        <% } %>
+                    </ul>
+                </p>
+                <hr>
+                <h6 style="text-align: center; color: white;">Customer Details:</h6>
+                <p style="color: white;">
+                    Delivery Address: <%= r.address %><br>
+                    Phone Number: <%= r.phone %>
+                </p>
+                <hr>
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <form action="/order/<%= r._id %>?_method=PUT" method="post">
+                        <button class="btn btn-gradient">Sell</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <% } %>
+<% } %>
+
+<style>
+    body {
+        height: 100vh;
+        background-image: linear-gradient(rgba(255, 105, 180, 0.7), rgba(255, 105, 180, 0.5)),
+                          url("https://u-mercari-images.mercdn.net/photos/m46150429639_2.jpg?1660706406");
+        background-size: cover;
+        background-position: center;
+        text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+    }
+
+    .order-title {
+        background: radial-gradient(circle, rgba(255, 20, 147, 0.8), rgba(255, 105, 180, 0.8));
+        max-width: 160vw;
+        text-align: center;
+        color: white;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+        animation: pulse 2s infinite;
+    }
+
+    .order-title h3 {
+        font-family: 'Arial', sans-serif;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #fff;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .card {
+        background: linear-gradient(145deg, #ff3385, #ff66b2);
+        color: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(255, 20, 147, 0.6);
+    }
+
+    .card-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        padding: 15px 20px;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .btn-gradient {
+        background: linear-gradient(45deg, #ff3385, #ff66b2);
+        color: white;
+        border-radius: 8px;
+        padding: 12px 25px;
+        border: none;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba(255, 20, 147, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-gradient:hover {
+        background: linear-gradient(45deg, #ff66b2, #ff3385);
+        transform: translateY(-2px);
+        cursor: pointer;
+    }
+
+    hr {
+        border-top: 1px solid #ff66b2;
+        margin: 20px 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        font-size: 1.1rem;
+        font-family: 'Arial', sans-serif;
+    }
+
+</style>

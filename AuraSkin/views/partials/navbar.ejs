@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff71aa;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: white;">AuraSkin</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/order" style="color: white;">Orders</a>
+                <a class="nav-link" href="/order/history" style="color: white;">History</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <% if(!currentUser){ %>
+                    <a class="nav-link" href="/user/register" style="color: white;">Sign Up</a>
+                    <a class="nav-link" href="/user/login" style="color: white;">Login</a>
+                <% } else { %>
+                    <a class="nav-link" href="/user/logout" style="color: white;">Logout</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        background-color: #ff3385; /* Vibrant pink background */
+        box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
+    }
+
+    .navbar .navbar-brand {
+        color: white; /* White text for brand */
+        font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+        color: white; /* White text for links */
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+        color: #ff66b2; /* Light pink on hover */
+    }
+
+    .navbar-toggler-icon {
+        background-color: white; /* White icon for the navbar toggle */
+    }
+
+    .navbar-nav.ms-auto .nav-link {
+        font-weight: bold;
+    }
+</style>

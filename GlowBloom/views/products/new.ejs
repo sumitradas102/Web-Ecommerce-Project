@@ -1,0 +1,48 @@
+<% layout('boilerplate') %>
+<div class="row justify-content-center">
+    <form action="/product" method="post" class="needs-validation mx-auto col-md-6 p-4 border rounded shadow"
+        style="background: #ffe4e1;" novalidate>
+        <h2 class="text-center text-white mb-4" style="background-color: #ff69b4; border-radius: 8px; padding: 10px;">
+            Add Product
+        </h2>
+        <div class="mb-3">
+            <label class="form-label fw-bold text-dark" for="name">Product Name</label>
+            <input type="text" name="product[name]" id="name" class="form-control border-pink" required
+                placeholder="Enter product name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold text-dark" for="description">Description</label>
+            <input type="text" name="product[description]" id="description" class="form-control border-pink" required
+                placeholder="Enter product description">
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label class="form-label fw-bold text-dark" for="image">Image</label>
+                <input type="text" name="product[image]" id="image" class="form-control border-pink" required
+                    placeholder="Image URL">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label class="form-label fw-bold text-dark" for="price">Price</label>
+                <input type="number" name="product[price]" id="price" class="form-control border-pink" required
+                    placeholder="Enter price">
+            </div>
+        </div>
+        <button class="btn btn-pink w-100">Save</button>
+    </form>
+</div>
+
+<style>
+    .border-pink {
+        border-color: #ff69b4 !important;
+    }
+
+    .btn-pink {
+        background-color: #ff69b4;
+        color: white;
+    }
+
+    .btn-pink:hover {
+        background-color: #ff85c2;
+        color: white;
+    }
+</style>

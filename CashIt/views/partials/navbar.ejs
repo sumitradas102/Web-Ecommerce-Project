@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-light border-bottom border-body" style="background: linear-gradient(to right, #ff99cc, #ffe6f7);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: #f8f6f7; font-weight: bold;">CashIt</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/dashboard" style="color: #f8f6f7;">Dashboard</a>
+          <a class="nav-link" href="/transactions" style="color: #f8f6f7;">Transactions</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <% if(!currentUser){ %>
+            <a class="nav-link" href="/register" style="color: #ff66a3;">Register</a>
+            <a class="nav-link" href="/login" style="color: #ff66a3;">Login</a>
+          <% } else { %>
+            <a class="nav-link" href="/logout" style="color: #ff66a3;">Logout</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <style>
+  .navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .navbar:hover {
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+  }
+  .navbar .nav-link:hover {
+    color: #ff99cc;
+    text-decoration: underline;
+  }
+  </style>
+  

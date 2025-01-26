@@ -1,0 +1,169 @@
+<% layout('boilerplate/boilerplate') %>
+
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h2 class="dashboard-title">Welcome to CashIt Dashboard</h2>
+  </div>
+
+  <div class="cards-wrapper">
+    <!-- Account Username Card -->
+    <div class="card card-user">
+      <div class="card-img-wrapper">
+        <img src="https://cdn-icons-png.flaticon.com/512/4218/4218292.png" alt="Profile Card" class="card-img" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">CashIt Username</h3>
+        <p class="card-text"><%= user.username %></p>
+      </div>
+    </div>
+
+    <!-- Account Encrypted ID Card -->
+    <div class="card card-info">
+      <div class="card-img-wrapper">
+        <img src="https://images.vexels.com/media/users/3/163168/isolated/preview/dbe96d03dd799b63fcbb149d9cd5e872-in-design-id-colored-icon.png" alt="ID Card" class="card-img" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">CashIt Account ID</h3>
+        <p class="card-text"><%= user._id %></p>
+      </div>
+    </div>
+
+    <!-- Account Balance Card -->
+    <div class="card card-money">
+      <div class="card-img-wrapper">
+        <img src="https://cdn-icons-png.flaticon.com/512/10384/10384161.png" alt="Money Card" class="card-img" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Account Balance</h3>
+        <p class="card-text"><%= user.balance %></p>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <div class="add-money-section">
+    <form action="/dummyaddtransaction" method="post">
+      <button class="btn btn-add-money">CashIt(+500)</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  
+  .dashboard-container {
+    background: linear-gradient(135deg, #ff66a3, #ff99cc);
+    padding: 40px;
+    border-radius: 25px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-header {
+    width: 100%;
+    background: #ff66a3;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .dashboard-title {
+    color: white;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .cards-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the cards horizontally */
+    gap: 20px; /* Space between cards */
+    padding: 20px 0;
+  }
+  
+
+  .card {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #ffccff;
+  }
+
+  .card-img {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+  }
+
+  .card-content {
+    padding: 20px;
+    background-color: #ffccff;
+    border-top: 2px solid #ff66a3;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    color: #ff66a3;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .card-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0;
+  }
+
+  .add-money-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .btn-add-money {
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    background-color: #ff66a3;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.6);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn-add-money:hover {
+    background-color: #ff3385;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 90%;
+    }
+
+    .dashboard-title {
+      font-size: 2rem;
+    }
+  }
+</style>

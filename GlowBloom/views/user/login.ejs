@@ -1,0 +1,117 @@
+<% layout('boilerplate') %>
+
+<div class="card mx-auto" style="width: 26rem; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+    <img src="https://www.universityofcalifornia.edu/sites/default/files/styles/article_default_banner/public/skincare-hero.jpeg?h=33451d6b&itok=qsdk537P"
+        class="card-img-top rounded-top" alt="...">
+    <div class="card-body" style="background-color: #fff0f5; border-radius: 20px 20px 0 0; padding: 35px;">
+        <h4 class="text-center text-pink mb-4" style="font-family: 'Lobster', cursive; font-size: 2.2rem; color: #ff69b4; letter-spacing: 1.5px;">
+            Hello Beautiful Skin!! 💖
+        </h4>
+        <form class="needs-validation" method="post" action="/user/login" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label text-dark fw-bold">Username</label>
+                <input type="text" class="form-control border-pink rounded-pill" id="username" name="username" required
+                    placeholder="Enter your username">
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label text-dark fw-bold">Password</label>
+                <input type="password" class="form-control border-pink rounded-pill" id="password" name="password" required
+                    placeholder="Enter your password">
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <button type="submit" class="btn btn-pink w-100 mt-3 rounded-pill">Login</button>
+            <p class="text-center text-muted mt-3 mb-0">Don't have an account? <a href="/user/register" class="text-pink fw-bold">Register</a></p>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        position: relative;
+        background-image: url('https://media.self.com/photos/63503faecbcc10f798a3cc8e/1:1/w_3748,h_3748,c_limit/Dermatologist-skincare-tips.jpg'); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-blend-mode: 8px;  /* Apply blur directly here */
+        color: #fff;
+        min-height: 100vh;  /* Ensure body content takes full height */
+        overflow: auto;  /* Allow scrolling */
+    }
+    
+    .cover-container {
+        position: relative;
+        z-index: 1;  /* Ensure content stays above the blurred background */
+        min-height: 100vh;  /* Ensure content fills the viewport */
+    }
+    
+    h1, p {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+    }
+    
+    button {
+        font-size: 1.2rem;
+        background-color: #ff69b4;
+        border-radius: 20px;
+        padding: 10px 20px;
+    }
+    
+    footer {
+        text-align: center;
+        color: #fff;
+        padding: 20px 0;
+    }
+    
+    
+    .border-pink {
+        border-color: #ff69b4 !important;
+    }
+
+    .btn-pink {
+        background-color: #ff69b4;
+        color: white;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-pink:hover {
+        background-color: #ff85c2;
+        transform: scale(1.05);
+    }
+
+    .card-body {
+        padding: 35px;
+        border-radius: 20px 20px 0 0;
+        background-color: #fadee7;
+    }
+
+    .card-img-top {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .text-muted a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #ff69b4;
+    }
+
+    .text-muted a:hover {
+        color: #ff85c2;
+        text-decoration: underline;
+    }
+
+    h4 {
+        font-family: 'Lobster', cursive;
+        font-size: 2.2rem;
+        color: #ff69b4;
+        letter-spacing: 1.5px;
+    }
+
+    .text-pink {
+        color: #f162aa;
+    }
+</style>

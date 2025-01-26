@@ -1,0 +1,147 @@
+<% layout('boilerplate/boilerplate') %>
+
+<div class="transaction-title">
+  <h3>Transaction History</h3>
+</div>
+<div class="container mt-10">
+  <% for(t of user.transactions) { %>
+  <div class="body">
+    <div class="cards">
+      <div class="card mx-auto">
+        <hr />
+        <div class="card-header">
+          <h4 class="transaction-type">
+            <%= user.username == t.sender ? "Cash Out" : "Cash In" %>
+          </h4>
+          <h4 class="transaction-amount"><%= t.amount %> TK</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-body-text">
+            <b>Sender:</b> <%= t.sender %><br />
+            <b>Receiver:</b> AuraSkin <br />
+            <b>Date and Time:</b> <%= t.date %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff66a3, #ff99cc);
+    margin: 0;
+    padding: 0;
+  }
+
+  .transaction-title {
+    background: linear-gradient(to right, #ff66a3, #ff99cc);
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+    gap: 5px;
+    max-height: 300vh; /* Increased height for more space */
+    overflow-y: auto;
+    background: radial-gradient(circle, #ff99cc, white);
+    border-radius: 15px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .card {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.7);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ff66a3;
+  }
+
+  .transaction-type {
+    color: #ff66a3;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .transaction-amount {
+    color: #ff3385;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .card-body-text {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .card-body-text b {
+    color: #ff66a3;
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid #ff66a3;
+    margin: 10px 0;
+  }
+
+  /* Scrollbar styling */
+  .container::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    background: #ff66a3;
+    border-radius: 5px;
+  }
+
+  .container::-webkit-scrollbar-track {
+    background: #ffe6f2;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 95%;
+    }
+
+    .transaction-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>
